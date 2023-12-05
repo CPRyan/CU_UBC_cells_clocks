@@ -46,7 +46,7 @@ Additionally, you will have the opportunity to include additional variables that
 
 Technically, the only file you will need to open and run is the `00_Setup.R` file. Individual pipeline steps and output will be described in detail after guiding the user through `00_Setup.R`.
 
-### `00_Setup.R`
+### 00_Setup.R
 
 The file follows the following procedure:
 
@@ -63,6 +63,8 @@ The file follows the following procedure:
 -   Provide names of `categorical_variables`. These will be used for stratifying outputs.
 -   Provide names of `continuous_variables`. These will be used for analyses of continuous associations.
 -   Provide names of `control_covariates`. These will be used in model building and stratifying outputs.
+
+This is what your file will look like. Please fill in the details as they relate to your dataset. 
 
 ![image](https://github.com/CPRyan/Cells-and-Clocks-Analysis/assets/17647405/8de95263-601e-4b1f-8d10-7f076f6599f5)
 
