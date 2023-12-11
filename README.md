@@ -69,9 +69,15 @@ This is what your file will look like. Please fill in the details as they relate
 <img width="1064" alt="image" src="https://github.com/CPRyan/Cells-and-Clocks-Analysis/assets/17647405/418924c2-91ae-4b86-b374-a39a4cf00a24">
 
 
-### 01_Cell_Clock_Summary_Boxplots.R
+### 01A_Cell_Clock_Summary_Boxplots.R
 
 Creates a series of boxplots and numerical summaries of those boxplots for each clock and each cell type. These are run on the study as a whole (Null) and stratified on levels of `categorical_variables`. At present, code will not plot categorical variables with \>18 groups.
+
+### 01B_Cell_Clock_Continuous_Delta_R2.R
+Examines the contribution of continuous variables to each cell and clock (residualized on Age) by looking at R2 with and without that continuous variables in the model. 
+Clock/cell (residualized on Age) as the outcome. Fits a model with `control_covariates`. Fits a model with each variable in `continuous_variables`, one at a time. Compares the R^2^ for model with the continuous variable and that without. Note: In this example, there is very little age variation in the sample, and so no significant associations between Age and cell or clock outcome. You data may differ. 
+
+<img width="556" alt="image" src="https://github.com/CPRyan/Cells-and-Clocks-Analysis/assets/17647405/33595cf4-f758-4645-be4f-5f37fd3c2620">
 
 
 
