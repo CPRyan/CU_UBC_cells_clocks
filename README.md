@@ -46,7 +46,7 @@ Additionally, you will have the opportunity to include additional variables that
 
 Technically, the only file you will need to open and run is the `00_Setup.R` file. Individual pipeline steps and output will be described in detail after guiding the user through `00_Setup.R`.
 
-### `00_Setup.R`
+### 00_Setup.R
 
 The file follows the following procedure:
 
@@ -64,28 +64,47 @@ The file follows the following procedure:
 -   Provide names of `continuous_variables`. These will be used for analyses of continuous associations.
 -   Provide names of `control_covariates`. These will be used in model building and stratifying outputs.
 
+This is what your file will look like. Please fill in the details as they relate to your dataset. 
+
+![image](https://github.com/CPRyan/Cells-and-Clocks-Analysis/assets/17647405/8de95263-601e-4b1f-8d10-7f076f6599f5)
+
+
 ### 01_Cell_Clock_Summary_Boxplots.R
 
 Creates a series of boxplots and numerical summaries of those boxplots for each clock and each cell type. These are run on the study as a whole (Null) and stratified on levels of `categorical_variables`. At present, code will not plot categorical variables with \>18 groups.
+
+
 
 ### 02A_Univariate_Cell_Clock_Associations.R
 
 Takes the residuals of each clock and each cell on `Age`. Runs a series of univariate correlations between each clock and each cell, one at a time.
 
+<img width="495" alt="image" src="https://github.com/CPRyan/Cells-and-Clocks-Analysis/assets/17647405/a87f8787-ec52-44dd-a789-9ae85d39e3f6">
+
+
 ### 02B_Univariate_Cell_Clock_Associations_Stratified.R
 
 Similar to `02A_Univariate_Cell_Clock_Associations.R`, takes the residuals of each clock and each cell on `Age`. Runs a series of univariate correlations between each clock and each cell, one at a time. This time correlations are run for each level of each category in `categorical_variables` (i.e. correlations are stratified by group in categorical variables).
+
+<img width="722" alt="image" src="https://github.com/CPRyan/Cells-and-Clocks-Analysis/assets/17647405/941b9136-887c-4c70-a36b-f41504c2f19f">
 
 ### 03_Cell_Clock_Delta_R2.R
 
 For each clock, regresses epigenetic clock age (residualized for age) on `Age`, and `control_covariates` without all cells, and with all cells. Compares the R2 between the two. Carried out for the dataset as a whole, and stratified by each group with in each `categorical_variables`.
 
+<img width="572" alt="image" src="https://github.com/CPRyan/Cells-and-Clocks-Analysis/assets/17647405/83d73dc8-49c1-4533-8c06-2646b2da8ae8">
+
+
 ### 04_Exposure_Cell_Clock_Associations.R
 
 Calculates the estimate and confidence intervals for the effect of `categorical_variable` on all clocks and all cells (residualized for age), accounting for `control_covariates`.
+
+<img width="434" alt="image" src="https://github.com/CPRyan/Cells-and-Clocks-Analysis/assets/17647405/b0faf783-4319-433d-a170-8def8c585618">
 
 ### 05_Exposure_Clock_Associations_Stratified.R
 
 Calculates the estimate and confidence intervals for the effect of `categorical_variable` on each epigenetic clock output, with and without including cells.
 
 Currently only works for 2 level categorical variables.
+
+<img width="849" alt="image" src="https://github.com/CPRyan/Cells-and-Clocks-Analysis/assets/17647405/4d2cdfe7-05af-49f6-9fa2-e97b4427eeab">
