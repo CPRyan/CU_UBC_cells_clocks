@@ -66,7 +66,7 @@ The file follows the following procedure:
 
 This is what your file will look like. Please fill in the details as they relate to your dataset. 
 
-![image](https://github.com/CPRyan/Cells-and-Clocks-Analysis/assets/17647405/8de95263-601e-4b1f-8d10-7f076f6599f5)
+<img width="1064" alt="image" src="https://github.com/CPRyan/Cells-and-Clocks-Analysis/assets/17647405/418924c2-91ae-4b86-b374-a39a4cf00a24">
 
 
 ### 01_Cell_Clock_Summary_Boxplots.R
