@@ -8,30 +8,6 @@ clock_columns <- c("PCHorvath1", "PCPhenoAge", "PCGrimAge", "DunedinPACE")
 # # merged together for residualization
 all_columns <-c(clock_columns, cell_columns)
 
-#####################################################################################
-# Function to perform the regression and standardization
-#####################################################################################
-regression_and_standardization <- function(column_name, data) {
-  data <-data %>% select(Age, all_of(all_columns), all_of(control_covariates)) %>% na.omit()
-  # Perform the linear regression
-  regression_model <- lm(data[[column_name]] ~ Age, data = data)
-  # Get the residuals and standardize them
-  residuals <- as.vector(scale(resid(regression_model)))
-  # Return the standardized residuals as a named vector
-  return(residuals)
-}
-
-############################
-# Use lapply to run the regression and standardization for each column
-############################
-standardized_residuals_list <- lapply(all_columns, function(column) {
-  regression_and_standardization(column, cell_clock_df)
-})
-
-# Name the columns of residualized outcomes
-names(standardized_residuals_list) <- paste0(all_columns, "_resids")
-
-cell_clock_df <-bind_cols(cell_clock_df, as_tibble(standardized_residuals_list)) 
 
 #####################################################################################
 # Function to take the input from above and run regressions with clock, one cell at a time, and covariates
